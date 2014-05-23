@@ -1,21 +1,17 @@
-function createFactory() {
-  var blueprint = {}
-  return factory(blueprint);
-}
 
-function factory (blueprint) {
-  var blueprint = blueprint;
-  return function() {
+var factory = function () {
+  var blueprint = {};
+
+  function factory() {
     return blueprint;
   }
-}
 
-factory.attr = function(key, value) {
-  blueprint[key] = value;
+  factory.attr = function (key, value) {
+    blueprint[key] = value;
+    return factory;
+  }
+
   return factory;
 }
 
-module.exports = function createFactory() {
-  factory.blueprint = {}
-  return factory;
-};
+module.exports = factory;

@@ -15,3 +15,8 @@ var anotherFactory = x.createFactory();
 
 console.log("another factory should be empty hash:", anotherFactory());
 
+anotherFactory.attr('name', 'john')
+  .attr('id', 10)
+  .attr('age', 50)
+
+console.log("another factory should be set:", anotherFactory());
