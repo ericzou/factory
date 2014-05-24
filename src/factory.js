@@ -1,9 +1,16 @@
+var _ = require('underscore');
 
-var factory = function () {
-  var blueprint = {};
+var factory = function (bp) {
+  var blueprint = bp || {};
 
   function factory() {
-    return blueprint;
+    var data = {};
+
+    _.each(blueprint, function (value, key) {
+      data[key] = _.result(blueprint, key);
+    });
+
+    return data;
   }
 
   factory.attr = function (key, value) {

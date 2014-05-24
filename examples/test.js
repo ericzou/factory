@@ -11,12 +11,16 @@ basicFactory.attr('id', 10);
 
 console.log("set id to 10:", basicFactory());
 
-var anotherFactory = x.createFactory();
+var userFactory = x.createFactory({
+  id: 10,
+  name: 'blah'
+});
 
-console.log("another factory should be empty hash:", anotherFactory());
+console.log("create a user ", userFactory())
 
-anotherFactory.attr('name', 'john')
-  .attr('id', 10)
-  .attr('age', 50)
 
-console.log("another factory should be set:", anotherFactory());
+userFactory.attr('age', function () {
+  return Math.floor(Math.random()*100);
+})
+
+  console.log("create a user with random age ", userFactory())
