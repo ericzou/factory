@@ -18,9 +18,17 @@ var userFactory = x.createFactory({
 
 console.log("create a user ", userFactory())
 
-
 userFactory.attr('age', function () {
   return Math.floor(Math.random()*100);
 })
 
-  console.log("create a user with random age ", userFactory())
+console.log("create a user with random age ", userFactory())
+
+x.defineFactory('book', {
+  id: 10,
+  name: 'foo',
+  author: 'bar'
+});
+
+var bookFactory = x.factory('book');
+console.log("retrive factory and create a book", bookFactory())
