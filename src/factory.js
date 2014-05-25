@@ -3,11 +3,12 @@ var _ = require('underscore');
 var factory = function (bp) {
   var blueprint = bp || {};
 
-  function factory() {
+  function factory(attributes) {
     var data = {};
+    var properties = _.extend(blueprint, attributes);
 
-    _.each(blueprint, function (value, key) {
-      data[key] = _.result(blueprint, key);
+    _.each(properties, function (value, property) {
+      data[property] = _.result(properties, property);
     });
 
     return data;
