@@ -32,3 +32,10 @@ x.defineFactory('book', {
 
 var bookFactory = x.factory('book');
 console.log("retrive factory and create a book", bookFactory())
+
+var authorFactory = x.defineFactory('author', {
+  id: x.generator.id,
+  name: x.generator.name
+});
+
+console.log("generators id, name for author", authorFactory());

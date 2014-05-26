@@ -1,5 +1,7 @@
 var factory = require ('./factory.js');
+var generator = require('./generator.js')
 var registry = {};
+
 
 var x = {};
 
@@ -24,5 +26,7 @@ x.factory = function (name) {
 
   return factory;
 }
+
+x.generator = generator;
 
 module.exports = x;

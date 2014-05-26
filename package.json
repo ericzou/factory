@@ -3,6 +3,7 @@
   "devDependencies": {
     "mocha": "x.x.x",
     "chai": "x.x.x",
-    "underscore": "x.x.x"
+    "underscore": "x.x.x",
+    "browserify": "x.x.x"
   }
 }
